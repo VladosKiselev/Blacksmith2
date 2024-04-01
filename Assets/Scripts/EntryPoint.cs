@@ -10,7 +10,7 @@ public class EntryPoint : MonoBehaviour
     private AutoClicker _autoClicker;
     private Seller _seller;
     private GameData _gameData;
-    private Blacksmith _blacksmith;
+    private GameController _gameController;
     private IClicker _clicker;
 
     private void Awake()
@@ -34,7 +34,7 @@ public class EntryPoint : MonoBehaviour
         _clicker = new ClickerKeyword();
         _seller = new Seller(_gameData, _currentPointView, _coinsView);
         _autoClicker = new AutoClicker(_seller, _gameData);
-        _blacksmith = new Blacksmith(_clicker, _seller, _gameData);
+        _gameController = new GameController(_clicker, _seller, _gameData);
         
         StartCoroutine(_autoClicker.AutoClickRoutine());
     }
@@ -46,6 +46,6 @@ public class EntryPoint : MonoBehaviour
 
     private void OnDestroy()
     {
-        _blacksmith.Dispose();
+        _gameController.Dispose();
     }
 }

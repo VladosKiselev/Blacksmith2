@@ -1,12 +1,12 @@
 ﻿using System;
 
-public class Blacksmith : IDisposable
+public class GameController : IDisposable
 {
     private readonly IClicker _clicker;
     private readonly Seller _seller;
     private readonly GameData _gameData;
 
-    public Blacksmith(IClicker clicker, Seller seller, GameData gameData)
+    public GameController(IClicker clicker, Seller seller, GameData gameData)
     {
         _gameData = gameData;
         _clicker = clicker;

@@ -1,4 +1,7 @@
-﻿public class GameData
+﻿using System;
+
+[Serializable]
+public class GameData
 {
     public int CurrentReadinessPoint;
     public int MaxReadinessPoint;
